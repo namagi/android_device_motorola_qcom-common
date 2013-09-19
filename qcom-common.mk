@@ -255,3 +255,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+PRODUCT_BOOTANIMATION = vendor/cm/prebuilt/common/bootanimation/320.zip
