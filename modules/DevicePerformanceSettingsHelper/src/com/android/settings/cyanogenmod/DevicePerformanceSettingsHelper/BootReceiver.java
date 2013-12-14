@@ -30,6 +30,7 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class BootReceiver extends BroadcastReceiver {
     public static final String TAG="PerformanceHelper";
     public static final String FREQ_MIN_PREF = "pref_cpu_freq_min";
@@ -44,6 +45,10 @@ public class BootReceiver extends BroadcastReceiver {
     public String FREQ_MAX_FILES[] = null;
     public String FREQ_MIN_FILES[] = null;
     public String THERMAL_MAX = null;
+
+
+    public NotificationHelper mNotificationHelper;
+
 
     public BootReceiver() {
     }
@@ -136,10 +141,14 @@ public class BootReceiver extends BroadcastReceiver {
                     if(Utils.fileExists(cpu_gov_file)) {
                         Log.i(TAG,"Setting governor "+cpu_gov_file+" to "+governor);
                         Utils.fileWriteOneLine(cpu_gov_file, governor,suproc);
+                    } else {
+                        mNotificationHelper = new NotificationHelper(context);
+                        mNotificationHelper.createNotification(
+                                "Failed to set all governors."
+                        );
                     }
                 }
             }
         }
-
     }
 }
