@@ -217,6 +217,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=true \
     qcom.hw.aac.encoder=true \
+    media.aaccodectype=1 \
     af.resampler.quality=255 \
     persist.audio.lowlatency.rec=false
 
