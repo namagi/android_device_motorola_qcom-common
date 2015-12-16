@@ -102,15 +102,10 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_ONLY := false
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT_COMP := false
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=everything
 
 #TWRP
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
