@@ -103,7 +103,7 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT := true
-WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT_PIC := false
 WITH_DEXPREOPT_COMP := false
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=everything
 
